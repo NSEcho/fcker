@@ -1,29 +1,14 @@
 package main
 
 import (
-	"io"
-	"net/http"
+	"fmt"
 	"os"
-)
 
-const (
-	thisPersonURL = "https://thispersondoesnotexist.com/image"
+	"github.com/lateralusd/fcker/cmd"
 )
 
 func main() {
-	resp, err := http.Get(thisPersonURL)
-	if err != nil {
-		panic(err)
-	}
-	defer resp.Body.Close()
-
-	f, err := os.Create("slicica.jpeg")
-	if err != nil {
-		panic(err)
-	}
-	defer f.Close()
-
-	if _, err := io.Copy(f, resp.Body); err != nil {
-		panic(err)
+	if err := cmd.RootCmd.Execute(); err != nil {
+		fmt.Fprintf(os.Stderr, "[-] Error occured: %+v\n", err)
 	}
 }
