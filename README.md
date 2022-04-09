@@ -1,14 +1,13 @@
 # fcker
 
-Fake person information generator and helpers.
+Generate fake person information using:
+* fakenamegenerator.com
+* thispersondoesnotexist.com
 
 # Usage
 
 ```bash
-$ git clone https://github.com/lateralusd/fcker.git
-$ cd fcker && go build
-$ ./fcker --help
-Fetcher/manipulator of fake data
+Fake person generator
 
 Usage:
   fcker [command]
@@ -16,7 +15,8 @@ Usage:
 Available Commands:
   codes       List user and country codes
   help        Help about any command
-  person      Fetch image from thispersondoesnotexist.com
+  image       Fetch image from thispersondoesnotexist.com
+  person      Fetch person from fakenamegenerator.com
 
 Flags:
   -h, --help   help for fcker
